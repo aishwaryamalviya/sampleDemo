@@ -28,13 +28,23 @@ pipeline {
                 sh "npx cap sync"
             }
         }
-       stage('open android') {
-            steps {
-
-                sh "gradle clean assembleRelease"
-            }
+       stage('Clean Build') {
+           dir("android") {
+               sh "pwd"
+               sh 'ls -al'
+               sh './gradlew clean'
+           }
         }
-
+       stage('open android') {
+         dir("android") {
+             sh './gradlew assembleRelease'
+            }
+           /* steps {
+           
+                sh "gradle clean assembleRelease"
+            }*/
+        }
+        
       }
    }
 
