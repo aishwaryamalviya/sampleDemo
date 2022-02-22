@@ -31,7 +31,7 @@ pipeline {
        stage('open android') {
             steps {
 
-                sh "gradle assembleDebug"
+                sh "gradle clean assembleRelease"
             }
         }
 
