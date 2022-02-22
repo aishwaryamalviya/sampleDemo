@@ -16,6 +16,12 @@ pipeline {
                 sh "npm run build"
             }
         }
+      stage('add android') {
+            steps {
+
+                sh "npx cap add android"
+            }
+        }
        stage('sync') {
             steps {
 
