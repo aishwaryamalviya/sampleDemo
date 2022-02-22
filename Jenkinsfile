@@ -31,7 +31,7 @@ pipeline {
        stage('open android') {
             steps {
 
-                sh "npx cap open android"
+                sh "gradlew assembleDebug"
             }
         }
 
