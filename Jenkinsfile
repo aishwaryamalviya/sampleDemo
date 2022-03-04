@@ -29,6 +29,14 @@ pipeline {
                 sh "npx cap sync"
             }
         }
+       stage('gradle') {
+            steps {
+
+                sh "chmod +x gradlew"  
+                sh "./gradlew clean"  
+                sh "./gradlew assembleDebug"
+            }
+        }
        /*stage('Clean Build') {
            dir("android") {
                sh "pwd"
