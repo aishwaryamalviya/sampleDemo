@@ -31,7 +31,7 @@ pipeline {
         }
        stage('gradle') {
             steps {
-                sh "cd android"
+                sh "cd ./android"
                 /*sh "chmod +x gradlew"*/
                 sh "./gradlew clean"  
                 sh "./gradlew assembleDebug"
