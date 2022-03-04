@@ -33,8 +33,8 @@ pipeline {
             steps {
                 
                 /*sh "chmod +x gradlew"*/
-                sh "../sampleDemo/android/gradlew clean"  
-                sh "../sampleDemo/android/gradlew assembleDebug"
+                sh "../IonicApp/android/gradlew clean"  
+                sh "../IonicApp/android/gradlew assembleDebug"
             }
         }
        /*stage('Clean Build') {
