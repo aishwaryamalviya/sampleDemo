@@ -21,7 +21,7 @@ pipeline {
 
                 sh "npx cap add android"
             }
-        }*/
+        }
        stage('sync') {
             steps {
 
@@ -39,11 +39,11 @@ pipeline {
          dir("android") {
              sh './gradlew assembleRelease'
             }
-           /* steps {
+           steps {
            
                 sh "gradle clean assembleRelease"
-            }*/
-        }
+            }
+        }*/
         
       }
    }
