@@ -12,7 +12,7 @@ pipeline {
         }
         stage('android') {
             steps {
-
+                sh "rm -rf android"
                 sh "npx cap add android"
             }
         }
