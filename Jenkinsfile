@@ -10,25 +10,26 @@ pipeline {
                 sh "npm install"
             }
         }
+        stage('android') {
+            steps {
+
+                sh "npx cap add android"
+            }
+        }
        stage('build') {
             steps {
 
                 sh "npm run build"
             }
         }
-      /* stage('add android') {
-            steps {
-
-                sh "npx cap add android"
-            }
-        }
+      
        stage('sync') {
             steps {
 
                 sh "npx cap sync"
             }
         }
-       stage('Clean Build') {
+       /*stage('Clean Build') {
            dir("android") {
                sh "pwd"
                sh 'ls -al'
