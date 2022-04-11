@@ -7,34 +7,34 @@ pipeline {
         stage('npm install') { 
             steps {
 
-                sh "npm install"
+                cmd "npm install"
             }
         }
         stage('android') {
             steps {
-                sh "rm -rf android"
-                sh "npx cap add android"
+                cmd "rm -rf android"
+                cmd "npx cap add android"
             }
         }
        stage('build') {
             steps {
 
-                sh "npm run build"
+                cmd "npm run build"
             }
         }
       
        stage('sync') {
             steps {
 
-                sh "npx cap sync"
+                cmd "npx cap sync"
             }
         }
        stage('gradle') {
             steps {
                 
                 /*sh "chmod +x gradlew"*/
-                sh "../IonicApp/android/gradlew clean"  
-                sh "../IonicApp/android/gradlew assembleDebug"
+                cmd "../IonicApp/android/gradlew clean"  
+                cmd "../IonicApp/android/gradlew assembleDebug"
             }
         }
        /*stage('Clean Build') {
