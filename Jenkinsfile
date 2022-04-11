@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    options {
-        buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '10')
-    }
     stages {
         stage('npm install') { 
             steps {
@@ -10,7 +7,7 @@ pipeline {
                 cmd "npm install"
             }
         }
-        stage('android') {
+        /*stage('android') {
             steps {
                 cmd "rm -rf android"
                 cmd "npx cap add android"
@@ -37,7 +34,7 @@ pipeline {
                 cmd "../IonicApp/android/gradlew assembleDebug"
             }
         }
-       /*stage('Clean Build') {
+       stage('Clean Build') {
            dir("android") {
                sh "pwd"
                sh 'ls -al'
