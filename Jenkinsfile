@@ -4,7 +4,7 @@ pipeline {
         stage('npm install') { 
             steps {
 
-                cmd "npm install"
+                CMD "npm install"
             }
         }
         /*stage('android') {
